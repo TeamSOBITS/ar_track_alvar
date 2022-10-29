@@ -1,7 +1,7 @@
 <launch>
   <!-- This test assumes 4markers_tork.bag is being played. -->
   <arg name="cam_image_topic" default="/camera/image_raw" />
-  <arg name="cam_info_topic" default="/camera/camera_info" />	
+  <arg name="cam_info_topic" default="/camera/camera_info" />    
   <arg name="marker_margin" default="2" />
   <arg name="marker_resolution" default="5" />
   <arg name="marker_size" default="2.3" />

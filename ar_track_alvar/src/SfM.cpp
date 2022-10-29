@@ -650,20 +650,20 @@ void SimpleSfM::Draw(IplImage* rgba)
         }
       }
       // if (pose_ok && f.has_p3d) {
-      //	cvLine(rgba, cvPointFrom32f(f.p2d), cvPointFrom32f(f.projected_p2d),
+      //    cvLine(rgba, cvPointFrom32f(f.p2d), cvPointFrom32f(f.projected_p2d),
       // CV_RGB(255,0,255));
       //}
       // if (f.type_id == 0) {
-      //	int id = iter->first;
-      //	cvCircle(rgba, cvPointFrom32f(f.p2d), 7, CV_RGB(255,0,0));
+      //    int id = iter->first;
+      //    cvCircle(rgba, cvPointFrom32f(f.p2d), 7, CV_RGB(255,0,0));
       //} else {
-      //	int id = iter->first-1024+1;
-      //	if (f.has_p3d) {
-      //		cvCircle(rgba, cvPointFrom32f(f.p2d), 5, CV_RGB(0,255,0));
-      //	}
-      //	else if (f.has_stored_pose)
-      //		cvCircle(rgba, cvPointFrom32f(f.p2d), f.tri_cntr+1,
-      // CV_RGB(255,0,255)); 	else 		cvCircle(rgba, cvPointFrom32f(f.p2d), 5,
+      //    int id = iter->first-1024+1;
+      //    if (f.has_p3d) {
+      //        cvCircle(rgba, cvPointFrom32f(f.p2d), 5, CV_RGB(0,255,0));
+      //    }
+      //    else if (f.has_stored_pose)
+      //        cvCircle(rgba, cvPointFrom32f(f.p2d), f.tri_cntr+1,
+      // CV_RGB(255,0,255));     else         cvCircle(rgba, cvPointFrom32f(f.p2d), 5,
       // CV_RGB(0,255,255));
       //}
     }

@@ -144,25 +144,25 @@ public:
  * template <class T>
  * class Container3dSortX {
  * protected:
- * 	Container3d<T> &container;
+ *     Container3d<T> &container;
  * public:
- * 	Container3dSortX(Container3d<T> &_container) : container(_container) {}
- * 	bool operator()(size_t i1, size_t i2) const {
- * 		return (container[i1].first.x < container[i2].first.x);
- * 	}
+ *     Container3dSortX(Container3d<T> &_container) : container(_container) {}
+ *     bool operator()(size_t i1, size_t i2) const {
+ *         return (container[i1].first.x < container[i2].first.x);
+ *     }
  * };
  * template <class T>
  * class Container3dLimitX {
  * protected:
- * 	int x_min, x_max;
- * 	Container3d<T> &container;
+ *     int x_min, x_max;
+ *     Container3d<T> &container;
  * public:
- * 	Container3dLimitX(Container3d<T> &_container, int _x_min, int _x_max)
- * 	: container(_container),x_min(_x_min),x_max(_x_max) {}
- * 	bool operator()(size_t i1) const {
- * 		if ((container[i1].first.x >= x_min) && (container[i1].first.x <= x_max))
+ *     Container3dLimitX(Container3d<T> &_container, int _x_min, int _x_max)
+ *     : container(_container),x_min(_x_min),x_max(_x_max) {}
+ *     bool operator()(size_t i1) const {
+ *         if ((container[i1].first.x >= x_min) && (container[i1].first.x <= x_max))
  * return true; return false;
- * 	}
+ *     }
  * };
  *
  * ...

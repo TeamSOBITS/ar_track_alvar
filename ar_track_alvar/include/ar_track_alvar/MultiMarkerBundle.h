@@ -116,7 +116,7 @@ public:
     \param method The method that is applied inside optimization. Try
     Optimization::LEVENBERGMARQUARDT or Optimization::GAUSSNEWTON or
     Optmization::TUKEY_LM
-  */																											//LEVENBERGMARQUARDT
+  */                                                                                                            //LEVENBERGMARQUARDT
   bool Optimize(Camera* _cam, double stop, int max_iter,
                 Optimization::OptimizeMethod method =
                     Optimization::TUKEY_LM);  // TUKEY_LM

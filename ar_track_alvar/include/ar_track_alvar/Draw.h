@@ -84,10 +84,10 @@ void inline DrawBB(cv::Mat& image, const std::vector<PointType>& points,
 }
 
 /** \brief Draws lines between consecutive points stored in vector (polyline).
- * \param image	Pointer to the destination image.
- * \param points	Vector of points that determine the polyline.
- * \param color	Use CV_RGB(red,green,blue) to determine the color.
- * \param loop		If true, the polyline is closed.
+ * \param image    Pointer to the destination image.
+ * \param points    Vector of points that determine the polyline.
+ * \param color    Use CV_RGB(red,green,blue) to determine the color.
+ * \param loop        If true, the polyline is closed.
  */
 template <class PointType>
 void inline DrawLines(cv::Mat& image, const std::vector<PointType>& points,
@@ -105,26 +105,26 @@ void inline DrawLines(cv::Mat& image, const std::vector<PointType>& points,
   }
 }
 
-/** \brief			Draws a line.
- * \param image	Pointer to the destination image.
- * \param line		Line struct to be drawn.
- * \param color	Use CV_RGB(red,green,blue) to determine the color.
+/** \brief            Draws a line.
+ * \param image    Pointer to the destination image.
+ * \param line        Line struct to be drawn.
+ * \param color    Use CV_RGB(red,green,blue) to determine the color.
  */
 void ALVAR_EXPORT DrawLine(cv::Mat& image, const Line line,
                            const cv::Scalar& color = CV_RGB(0, 255, 0));
 
 /** \brief Draws points of the contour that is obtained by \e Labeling class.
- * \param image	Pointer to the destination image.
- * \param contour	Controur sequence.
- * \param color	Use CV_RGB(red,green,blue) to determine the color.
+ * \param image    Pointer to the destination image.
+ * \param contour    Controur sequence.
+ * \param color    Use CV_RGB(red,green,blue) to determine the color.
  */
 void ALVAR_EXPORT DrawPoints(cv::Mat& image,
                              const std::vector<cv::Point>& contour,
                              const cv::Scalar& color = CV_RGB(255, 0, 0));
 
 /** \brief Draws circles to the contour points that are obtained by \e Labeling
- * class. \param image	Pointer to the destination image. \param contour
- * Controur sequence. \param radius	Circle radius in pixels. \param color	Use
+ * class. \param image    Pointer to the destination image. \param contour
+ * Controur sequence. \param radius    Circle radius in pixels. \param color    Use
  * CV_RGB(red,green,blue) to determine the color.
  */
 void ALVAR_EXPORT DrawCircles(cv::Mat& image,
@@ -132,19 +132,19 @@ void ALVAR_EXPORT DrawCircles(cv::Mat& image,
                               const cv::Scalar& color = CV_RGB(255, 0, 0));
 
 /** \brief Draws lines between consecutive contour points.
- * \param image	Pointer to the destination image.
- * \param contour	Controur sequence.
- * \param color	Use CV_RGB(red,green,blue) to determine the color.
+ * \param image    Pointer to the destination image.
+ * \param contour    Controur sequence.
+ * \param color    Use CV_RGB(red,green,blue) to determine the color.
  */
 void ALVAR_EXPORT DrawLines(cv::Mat& image,
                             const std::vector<cv::Point>& contour,
                             const cv::Scalar& color = CV_RGB(255, 0, 0));
 
 /** \brief Draws circles to the array of points.
- * \param image	Pointer to the destination image.
- * \param points	Vector of points to be visualized.
- * \param color	Use CV_RGB(red,green,blue) to determine the color.
- * \param radius	Circle radius in pixels.
+ * \param image    Pointer to the destination image.
+ * \param points    Vector of points to be visualized.
+ * \param color    Use CV_RGB(red,green,blue) to determine the color.
+ * \param radius    Circle radius in pixels.
  */
 template <class PointType>
 void inline DrawPoints(cv::Mat& image, const std::vector<PointType>& points,
@@ -156,11 +156,11 @@ void inline DrawPoints(cv::Mat& image, const std::vector<PointType>& points,
 }
 
 /** \brief Draws OpenCV ellipse.
- * \param image	Pointer to the destination image.
- * \param ellipse	Ellipse struct in OpenCV format.
- * \param color	Use CV_RGB(red,green,blue) to determine the color.
- * \param fill		If false, only the outline is drawn.
- * \param par		The ellipse width and height are grown by \e par pixels.
+ * \param image    Pointer to the destination image.
+ * \param ellipse    Ellipse struct in OpenCV format.
+ * \param color    Use CV_RGB(red,green,blue) to determine the color.
+ * \param fill        If false, only the outline is drawn.
+ * \param par        The ellipse width and height are grown by \e par pixels.
  */
 void ALVAR_EXPORT DrawCVEllipse(cv::Mat& image, const cv::RotatedRect& ellipse,
                                 const cv::Scalar& color, bool fill = false,
@@ -168,12 +168,12 @@ void ALVAR_EXPORT DrawCVEllipse(cv::Mat& image, const cv::RotatedRect& ellipse,
 
 /** \brief This function is used to construct a texture image which is needed to
  * hide a marker from the original video frame. See \e SampleMarkerHide.cpp for
- * example implementation. \param image		Pointer to the original video frame
- * from where the hiding texture is calculated. \param hide_texture	Pointer to
+ * example implementation. \param image        Pointer to the original video frame
+ * from where the hiding texture is calculated. \param hide_texture    Pointer to
  * the destination image where the resulting texture is stored. \param cam
- * Camera object that is used for marker tracking. \param gl_modelview	Current
- * model view matrix. \param topleft		Top left limit of the texture area in
- * marker coordinate frame. \param botright		Bottom right limit of the texture
+ * Camera object that is used for marker tracking. \param gl_modelview    Current
+ * model view matrix. \param topleft        Top left limit of the texture area in
+ * marker coordinate frame. \param botright        Bottom right limit of the texture
  * area in marker coordinate frame.
  */
 void ALVAR_EXPORT BuildHideTexture(cv::Mat& image, cv::Mat& hide_texture,
@@ -182,13 +182,13 @@ void ALVAR_EXPORT BuildHideTexture(cv::Mat& image, cv::Mat& hide_texture,
 
 /** \brief Draws the texture generated by \e BuildHideTexture to given video
  * frame. For better performance, use OpenGL instead. See \e
- * SampleMarkerHide.cpp for example implementation. \param image		Pointer to
- * the destination image where the texture is drawn. \param texure		Pointer to
- * the texture image genereated by \e BuildHideTexture. \param cam			Camera
- * object that is used for marker tracking. \param gl_modelview	Current model
- * view matrix. \param topleft		Top left limit of the texture area in marker
+ * SampleMarkerHide.cpp for example implementation. \param image        Pointer to
+ * the destination image where the texture is drawn. \param texure        Pointer to
+ * the texture image genereated by \e BuildHideTexture. \param cam            Camera
+ * object that is used for marker tracking. \param gl_modelview    Current model
+ * view matrix. \param topleft        Top left limit of the texture area in marker
  * coordinate frame.
- *  \param botright		Bottom right limit of the texture area in marker
+ *  \param botright        Bottom right limit of the texture area in marker
  * coordinate frame.
  */
 void ALVAR_EXPORT DrawTexture(cv::Mat& image, cv::Mat& texture, Camera* cam,

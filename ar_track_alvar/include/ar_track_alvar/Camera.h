@@ -61,7 +61,7 @@ struct ALVAR_EXPORT ProjPoints
   /** \brief Detected 2D object points
    * If point_counts[0] == 10, then the
    * first 10 points are detected in the first frame. If
-   * point_counts[1]	== 6, then the next 6 of these points are
+   * point_counts[1]    == 6, then the next 6 of these points are
    * detected in the next frame... etc.
    */
   std::vector<cv::Point2d> image_points;

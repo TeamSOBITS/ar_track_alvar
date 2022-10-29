@@ -107,8 +107,8 @@ typedef ALVAR_EXPORT Point<cv::Point> PointInt;
 typedef ALVAR_EXPORT Point<cv::Point2d> PointDouble;
 
 /** \brief Returns the squared distance of two points.
- * \param p1	First point.
- * \param p2	Second point.
+ * \param p1    First point.
+ * \param p2    Second point.
  * \return Squared distance.
  */
 template <class PointType>
@@ -121,7 +121,7 @@ double PointSquaredDistance(PointType p1, PointType p2)
 
 /**
  * \brief  Computes dot product AB.BC
- * \param  A,B and C	points defining lines (line segments) AB and BC
+ * \param  A,B and C    points defining lines (line segments) AB and BC
  */
 int ALVAR_EXPORT dot(const cv::Point& A, const cv::Point& B,
                      const cv::Point& C);
@@ -136,22 +136,22 @@ int ALVAR_EXPORT cross(const cv::Point& A, const cv::Point& B,
 
 /**
  * \brief  Compute the distance from A to B
- * \param  A and B		points
+ * \param  A and B        points
  */
 double ALVAR_EXPORT distance(const cv::Point& A, const cv::Point& B);
 
 /**
  * \brief  Computes the distance from point C to line (segment) AB.
- * \param  isSegment	If isSegment is true, AB is a segment, not a line.
- * \param  C	point
- * \param  A abd B	 points defining line (segment) AB
+ * \param  isSegment    If isSegment is true, AB is a segment, not a line.
+ * \param  C    point
+ * \param  A abd B     points defining line (segment) AB
  */
 double ALVAR_EXPORT linePointDist(const cv::Point& A, const cv::Point& B,
                                   const cv::Point& C, bool isSegment);
 
 /**
  * \brief  Computes the angle between lines AB and CD
- * \param  isDirectionDependent	If isDirectionDependent = 1, angle depends on
+ * \param  isDirectionDependent    If isDirectionDependent = 1, angle depends on
  * the order of the points. Otherwise returns smaller angle. \param  A start
  * point of first line \param  B end point of first line \param  C start point
  * of second line \param  D end point of second line
@@ -162,7 +162,7 @@ double ALVAR_EXPORT angle(const cv::Point& A, const cv::Point& B,
 
 /**
  * \brief  Calculates minimum distance from Point C to Polygon whose points are
- * in list PointList \brief  Returns distance \param  index	index of point A in
+ * in list PointList \brief  Returns distance \param  index    index of point A in
  * pointlist, where A is the starting point of the closest polygon segment
  * \param  isClosedPolygon is true if polygon is closed (segment of the first
  * and last point is also checked)
@@ -175,8 +175,8 @@ double ALVAR_EXPORT polyLinePointDist(const std::vector<cv::Point>& points,
 
 /**
  * \brief Uses OpenCV routine to fit ellipse to a vector of points.
- * \param points		Vector of points on the ellipse edge.
- * \param ellipse_box	OpenCV struct for the fitted ellipse.
+ * \param points        Vector of points on the ellipse edge.
+ * \param ellipse_box    OpenCV struct for the fitted ellipse.
  */
 void ALVAR_EXPORT FitCVEllipse(const std::vector<PointDouble>& points,
                                cv::RotatedRect& ellipse_box);
@@ -186,9 +186,9 @@ int ALVAR_EXPORT exp_filt2(std::vector<double>& v, std::vector<double>& ret,
 
 /**
  * \brief Calculates the difference between the consecutive vector elements.
- * \param v	Source elements.
- * \param ret	The difference vector. This is cleared and then resized.
- * \return		The number of elements.
+ * \param v    Source elements.
+ * \param ret    The difference vector. This is cleared and then resized.
+ * \return        The number of elements.
  */
 template <class C>
 inline int ALVAR_EXPORT diff(const std::vector<C>& v, std::vector<C>& ret)
@@ -211,10 +211,10 @@ inline int ALVAR_EXPORT diff(const std::vector<C>& v, std::vector<C>& ret)
 
 /**
  * \brief Finds zero crossings of given vector elements (sequence).
- * \param v		Sequence of numbers from where the zero crossings are found.
- * \param corners	Resulting index list of zero crossings.
+ * \param v        Sequence of numbers from where the zero crossings are found.
+ * \param corners    Resulting index list of zero crossings.
  * \param offs
- * \return			Number of zero crossings found.
+ * \return            Number of zero crossings found.
  */
 int ALVAR_EXPORT find_zero_crossings(const std::vector<double>& v,
                                      std::vector<int>& corners, int offs = 20);
@@ -226,10 +226,10 @@ void ALVAR_EXPORT out_matrix(const cv::Mat& m, const char* name);
 
 /**
  * \brief Limits a number to between two values.
- * \param val		Input value.
- * \param min_val	Minimum value for the result.
- * \param max_val	Maximum value for the result.
- * \return			Resulting value that is between \e min_val and \e max_val.
+ * \param val        Input value.
+ * \param min_val    Minimum value for the result.
+ * \param max_val    Maximum value for the result.
+ * \return            Resulting value that is between \e min_val and \e max_val.
  */
 double ALVAR_EXPORT Limit(double val, double min_val, double max_val);
 
@@ -333,11 +333,11 @@ inline void STRCPY(char* to, size_t size, const char* src)
  * \code
  * const char *SerializeId { return "camera"; };
  * bool Serialize(Serialization *ser) {
- *	if (!ser->Serialize(calib_x_res, "width")) return false;
- *	if (!ser->Serialize(calib_y_res, "height")) return false;
- *	if (!ser->Serialize(calib_K, "intrinsic_matrix")) return false;
- *	if (!ser->Serialize(calib_D, "distortion")) return false;
- *	return true;
+ *    if (!ser->Serialize(calib_x_res, "width")) return false;
+ *    if (!ser->Serialize(calib_y_res, "height")) return false;
+ *    if (!ser->Serialize(calib_K, "intrinsic_matrix")) return false;
+ *    if (!ser->Serialize(calib_D, "distortion")) return false;
+ *    return true;
  * }
  * \endcode
  * In your classes \e Serialize -method you can use the overloaded

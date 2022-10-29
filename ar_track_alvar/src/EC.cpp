@@ -82,7 +82,7 @@ bool CameraEC::UpdatePose(const CvMat* object_points, CvMat* image_points,
 {
   if (object_points->height < 4)
     return false;
-  /*	if (object_points->height < 6) {
+  /*    if (object_points->height < 6) {
     return false;
     // TODO: We need to change image_points into CV_32FC2
     return Camera::CalcExteriorOrientation(object_points, image_points, rot,

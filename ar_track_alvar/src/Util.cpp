@@ -106,10 +106,10 @@ double angle(const cv::Point& A, const cv::Point& B, const cv::Point& C,
 double polyLinePointDist(const std::vector<cv::Point>& points,
                          const cv::Point& C, int* index, int isClosedPolygon)
 {
-  //	Calculate minimum distance of Point C to Polygon whose points are in list
-  // PointList 	if isClosedPolygon is true polygon is closed (segnment of the
-  // first and last point is also checked) 	index is the index of point A in
-  // pointlist, 	where A is the starting point of the closest polygon segment
+  //    Calculate minimum distance of Point C to Polygon whose points are in list
+  // PointList     if isClosedPolygon is true polygon is closed (segnment of the
+  // first and last point is also checked)     index is the index of point A in
+  // pointlist,     where A is the starting point of the closest polygon segment
   *index = -1;
   double mindist = -1;
   double dist;

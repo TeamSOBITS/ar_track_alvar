@@ -346,7 +346,7 @@ public:
       if (feature_count == max_features) break;
     }
     // Check that next_id is ok
-    if (next_id < first_id)	next_id = first_id;
+    if (next_id < first_id)    next_id = first_id;
     if (next_id > last_id) return false; // TODO: Make some better solution for
   this
     // Purge if needed

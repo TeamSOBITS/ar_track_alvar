@@ -77,8 +77,8 @@ public:
 
   /**
    * \brief Constructor.
-   * \param n_params	Number of parameters to be optimized.
-   * \param n_meas	Number of measurements that are observed.
+   * \param n_params    Number of parameters to be optimized.
+   * \param n_meas    Number of measurements that are observed.
    */
   Optimization(int n_params, int n_meas);
   ~Optimization();
@@ -95,10 +95,10 @@ public:
   /**
    * \brief Pointer to the function that projects the state of the system to the
    * measurements.
-   * \param state		System parameters, e.g. camera parameterization in optical
+   * \param state        System parameters, e.g. camera parameterization in optical
    * tracking.
-   * \param projection	The system state projection is stored here. E.g image
-   * measurements in optical tracking. \param param		Additional parameters to
+   * \param projection    The system state projection is stored here. E.g image
+   * measurements in optical tracking. \param param        Additional parameters to
    * the function. E.g. some constant parameters that are not optimized.
    */
   typedef void (*EstimateCallback)(cv::Mat& state, cv::Mat& projection,
@@ -106,25 +106,25 @@ public:
 
   /**
    * \brief Numerically differentiates and calculates the Jacobian around x.
-   * \param x		The set of parameters around which the Jacobian is evaluated.
-   * \param J		Resulting Jacobian matrix is stored here.
-   * \param Estimate	The function to be differentiated.
+   * \param x        The set of parameters around which the Jacobian is evaluated.
+   * \param J        Resulting Jacobian matrix is stored here.
+   * \param Estimate    The function to be differentiated.
    */
   void CalcJacobian(cv::Mat& x, cv::Mat& J, EstimateCallback Estimate);
 
   /**
    * \brief Runs the optimization loop with selected parameters.
-   * \param parameters		Vector of parameters to be optimized. Initial values
-   * should be set. \param measurements		Vector of measurements that are
-   * observed. \param stop				Optimization loop ends as the \e stop limit is
-   * reached. Criteria is calculated as \param max_iter			Maximum number of
+   * \param parameters        Vector of parameters to be optimized. Initial values
+   * should be set. \param measurements        Vector of measurements that are
+   * observed. \param stop                Optimization loop ends as the \e stop limit is
+   * reached. Criteria is calculated as \param max_iter            Maximum number of
    * iteration loops that are evaluated if \e stop is not reached. \param
-   * Estimate			Pointer to the function that maps the state to the
-   * measurements. See \e EstimateCallback. \param method			One of the three
-   * possible optimization methods. \param parameters_mask	Vector that defines
+   * Estimate            Pointer to the function that maps the state to the
+   * measurements. See \e EstimateCallback. \param method            One of the three
+   * possible optimization methods. \param parameters_mask    Vector that defines
    * the parameters that are optimized. If vector element is 0, corresponding
-   * parameter is not altered. \param J_mat			Jacobian matrix. If not given,
-   * numerical differentation is used. \param weights			Weight vector that can
+   * parameter is not altered. \param J_mat            Jacobian matrix. If not given,
+   * numerical differentation is used. \param weights            Weight vector that can
    * be submitted to give different weights to different measurements. Currently
    * works only with OptimizeMethod::TUKEY_LM.
    */
