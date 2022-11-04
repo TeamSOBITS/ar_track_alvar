@@ -163,19 +163,19 @@ Camera::Camera(ros::NodeHandle& n, std::string cam_info_topic) : n_(n)
 
 //
 // Camera::Camera(int w, int h) {
-//    calib_K = cvMat(3, 3, CV_64F, calib_K_data);
-//    calib_D = cvMat(4, 1, CV_64F, calib_D_data);
-//    memset(calib_K_data,0,sizeof(double)*3*3);
-//    memset(calib_D_data,0,sizeof(double)*4);
-//    calib_K_data[0][0] = w/2;
-//    calib_K_data[1][1] = w/2;
-//    calib_K_data[0][2] = w/2;
-//    calib_K_data[1][2] = h/2;
-//    calib_K_data[2][2] = 1;
-//    calib_x_res = w;
-//    calib_y_res = h;
-//    x_res = w;
-//    y_res = h;
+//	calib_K = cvMat(3, 3, CV_64F, calib_K_data);
+//	calib_D = cvMat(4, 1, CV_64F, calib_D_data);
+//	memset(calib_K_data,0,sizeof(double)*3*3);
+//	memset(calib_D_data,0,sizeof(double)*4);
+//	calib_K_data[0][0] = w/2;
+//	calib_K_data[1][1] = w/2;
+//	calib_K_data[0][2] = w/2;
+//	calib_K_data[1][2] = h/2;
+//	calib_K_data[2][2] = 1;
+//	calib_x_res = w;
+//	calib_y_res = h;
+//	x_res = w;
+//	y_res = h;
 //}
 
 void Camera::SetSimpleCalib(int _x_res, int _y_res, double f_fac)
@@ -446,7 +446,7 @@ void Camera::GetOpenglProjectionMatrix(double proj_matrix[16], const int width,
   proj_matrix[5] = 2.0f * calib_K_data[1][1] / float(height);
   proj_matrix[6] = 0;
   proj_matrix[7] = 0;
-  // proj_matrix[8]    = (2.0f * calib_K_data[0][2] / float(width)) - 1.0f;
+  // proj_matrix[8]	= (2.0f * calib_K_data[0][2] / float(width)) - 1.0f;
   proj_matrix[8] = -(2.0f * calib_K_data[0][2] / float(width)) + 1.0f;
   proj_matrix[9] = (2.0f * calib_K_data[1][2] / float(height)) - 1.0f;
   proj_matrix[10] = -(far_clip + near_clip) / (far_clip - near_clip);

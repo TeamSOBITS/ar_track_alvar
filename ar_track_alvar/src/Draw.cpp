@@ -107,7 +107,7 @@ void BuildHideTexture(cv::Mat& image, cv::Mat& hide_texture, Camera* cam,
   double height = abs(botright.y - topleft.y);
 
   // GLint vp[4]; //viewport
-  // GLdouble winx[8];    // point's coordinates in windowcoordinates
+  // GLdouble winx[8];	// point's coordinates in windowcoordinates
   // GLdouble winy[8];
   // GLdouble winz[8];
   double objx;

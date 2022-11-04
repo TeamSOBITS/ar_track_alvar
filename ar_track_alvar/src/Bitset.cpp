@@ -152,7 +152,7 @@ string Bitset::hex()
 unsigned long Bitset::ulong()
 {
   // if(bits.size() > (sizeof(unsigned long)*8))
-  //    throw "code too big for unsigned long\n";
+  //	throw "code too big for unsigned long\n";
   stringstream ss;
   ss << setbase(16) << hex();
   unsigned long v;
@@ -163,7 +163,7 @@ unsigned long Bitset::ulong()
 unsigned char Bitset::uchar()
 {
   // if(bits.size() > (sizeof(unsigned char)*8))
-  //    throw "code too big for unsigned char\n";
+  //	throw "code too big for unsigned char\n";
   stringstream ss;
   ss << setbase(16) << hex();
   unsigned long v;  // ttehop: Note, that this cannot be char

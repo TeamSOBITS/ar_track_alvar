@@ -64,10 +64,10 @@ struct ALVAR_EXPORT Line
 
 /**
  * \brief Fit lines to vector of points.
- * \param lines        Resulting set of lines.
- * \param corners    Index list of line breaks.
- * \param edge        Vector of points (pixels) where the line is fitted.
- * \param grey        In the future, we may want to fit lines directly to grayscale
+ * \param lines		Resulting set of lines.
+ * \param corners	Index list of line breaks.
+ * \param edge		Vector of points (pixels) where the line is fitted.
+ * \param grey		In the future, we may want to fit lines directly to grayscale
  * image instead of thresholded edge.
  */
 int ALVAR_EXPORT FitLines(std::vector<Line>& lines,
@@ -76,9 +76,9 @@ int ALVAR_EXPORT FitLines(std::vector<Line>& lines,
 
 /**
  * \brief Calculates an intersection point of two lines.
- * \param l1    First line.
- * \param l2    Second line.
- * \return        Intersection point.
+ * \param l1	First line.
+ * \param l2	Second line.
+ * \return		Intersection point.
  */
 PointDouble ALVAR_EXPORT Intersection(const Line& l1, const Line& l2);
 

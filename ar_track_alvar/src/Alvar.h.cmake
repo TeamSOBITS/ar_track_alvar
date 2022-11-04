@@ -165,7 +165,7 @@
         #define ALVAR_EXPORT __declspec(dllimport)
     #endif
 #else
-    #define ALVAR_EXPORT
+	#define ALVAR_EXPORT
 #endif
 
 /**
