@@ -57,7 +57,7 @@ Below are the operating environment details required for proper functioning.
 ```
 $ roslaunch ar_track_alvar azure_kinect.launch
 ```
-
+※If using a different camera, please make sure to change the topic name and frame name accordingly.
 
 - [Back to Top](#ar_to_distance)
 
