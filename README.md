@@ -57,7 +57,7 @@
 ```
 $ roslaunch ar_track_alvar azure_kinect.launch
 ```
-
+※その他のカメラを使用した場合は、トピック名とframe名を変更してください．
 - [Topに戻る](#ar_to_distance)
 
 <!-- マイルストーン -->
