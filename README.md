@@ -36,6 +36,7 @@
 ## 概要
 - ARコードを読み取り距離を算出するパッケージ
 - ARコードからcamera基準のTFを送信します。
+※　/ar_track_alvar/makers　にあるARマーカーを使用して検出してください。
 <p align="right">(<a href="#readme-top">上に戻る</a>)</p>
 
 <!-- セットアップ -->

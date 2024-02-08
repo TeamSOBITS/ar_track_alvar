@@ -36,6 +36,7 @@
 ## Overview
 - Package to calculate distance from AR codes
 - Sends TF relative to camera from AR codes.
+※ Please detect using the AR markers located in /ar_track_alvar/markers.
 <p align="right">(<a href="#readme-top">Back to top</a>)</p>
 
 <!-- Setup -->
