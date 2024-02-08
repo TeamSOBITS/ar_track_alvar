@@ -1,7 +1,7 @@
 # **ar_to_distance**
 <a name="readme-top"></a>
 
-[JP](template_readme.md) | [EN](template_readme_en.md)
+[JP](README.md) | [EN](readme_en.md)
 
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
