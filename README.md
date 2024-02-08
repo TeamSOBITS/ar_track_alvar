@@ -35,16 +35,16 @@
 <!-- レポジトリの概要 -->
 ## 概要
 - ARコードを読み取り距離を算出するパッケージ
-- ARコードからcamera基準のTFを送信します。
-※　/ar_track_alvar/makers　にあるARマーカーを使用して検出してください。
+- ARコードからcamera基準のTFを送信します．
+- ※/ar_track_alvar/makers　にあるARマーカーを使用して検出してください．
 <p align="right">(<a href="#readme-top">上に戻る</a>)</p>
 
 <!-- セットアップ -->
 ## セットアップ
-See [ROS wiki](http://wiki.ros.org/ar_track_alvar) for the users document.
+ [ROS wiki](http://wiki.ros.org/ar_track_alvar) を参照してください.
 
 ### 環境条件
-以下に正常動作環境を示します。
+以下に正常動作環境を示します．
 | System  | Version |
 | ------------- | ------------- |
 | Ubuntu    | 20.04 (Focal Fossa) |
