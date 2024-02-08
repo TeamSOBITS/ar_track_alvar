@@ -66,7 +66,7 @@ $ roslaunch ar_track_alvar azure_kinect.launch
     - [ ] ドキュメンテーションの充実
     - [ ] コーディングスタイルの統一
 
-現時点のバッグや新規機能の依頼を確認するために[Issueページ](https://github.com/github_username/repo_name/issues) をご覧ください．
+現時点のバッグや新規機能の依頼を確認するために[Issueページ](https://github.com/ros-perception/ar_track_alvar/issues) をご覧ください．
 
 <p align="right">(<a href="#readme-top">上に</a>)</p>
 
@@ -93,6 +93,6 @@ $ roslaunch ar_track_alvar azure_kinect.launch
 [stars-shield]: https://img.shields.io/github/stars/github_username/repo_name.svg?style=for-the-badge
 [stars-url]: https://github.com/github_username/repo_name/stargazers
 [issues-shield]: https://img.shields.io/github/issues/github_username/repo_name.svg?style=for-the-badge
-[issues-url]: https://github.com/github_username/repo_name/issues
+[issues-url]: https://github.com/ros-perception/ar_track_alvar/issues
 <!-- [license-shield]: https://img.shields.io/github/license/github_username/repo_name.svg?style=for-the-badge
 [license-url]: https://github.com/github_username/repo_name/blob/master/LICENSE.txt -->
