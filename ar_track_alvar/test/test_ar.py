@@ -85,7 +85,7 @@ class TestArAlvarRos(unittest.TestCase):
             while not rospy.is_shutdown():
                 try:
                     target_frame = '/ar_marker_{}'.format(i)
-                    (trans, rot) = self.tflistener.lookupTransform('/camera', target_frame, rospy.Time(0))
+                    (trans, rot) = self.tflistener.lookupTransform('/camera_link', target_frame, rospy.Time(0))
                     break
                 except (tf.LookupException, tf.ConnectivityException, tf.ExtrapolationException) as e:
                     rospy.logerr(str(e) + ' target_frame={}'.format(target_frame))
