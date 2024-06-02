@@ -1,4 +1,4 @@
-# **ar_to_distance**
+# ar_to_distance
 <a name="readme-top"></a>
 
 [JP](README.md) | [EN](README_en.md)
@@ -7,7 +7,8 @@
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
-<!-- [![MIT License][license-shield]][license-url] -->
+[![License][license-shield]][license-url]
+
 
 <!-- 目次 -->
 <details>
@@ -17,7 +18,7 @@
       <a href="#概要">概要</a>
     </li>
     <li>
-      <a href="#環境構築">環境構築</a>
+      <a href="#セットアップ">セットアップ</a>
       <ul>
         <li><a href="#環境条件">環境条件</a></li>
         <li><a href="#インストール方法">インストール方法</a></li>
@@ -26,59 +27,129 @@
     <li><a href="#実行・操作方法">実行・操作方法</a></li>
     <li><a href="#マイルストーン">マイルストーン</a></li>
     <li><a href="#変更履歴">変更履歴</a></li>
-    <!-- <li><a href="#contributing">Contributing</a></li> -->
-    <!-- <li><a href="#license">License</a></li> -->
     <li><a href="#参考文献">参考文献</a></li>
   </ol>
 </details>
 
+
 <!-- レポジトリの概要 -->
 ## 概要
-- ARコードを読み取り距離を算出するパッケージ
-- ARコードからcamera基準のTFを送信します．
-- ※/ar_track_alvar/makers　にあるARマーカーを使用して検出してください．
+
+- ARタグを読み取り距離を算出するパッケージ
+- ARタグからcamera基準のTFを送信します．
+
 <p align="right">(<a href="#readme-top">上に戻る</a>)</p>
+
 
 <!-- セットアップ -->
 ## セットアップ
- [ROS wiki](http://wiki.ros.org/ar_track_alvar) を参照してください.
 
+ここで，本レポジトリのセットアップ方法について説明します．
+
+<p align="right">(<a href="#readme-top">上に戻る</a>)</p>
+
+
+<!-- 環境条件 -->
 ### 環境条件
-以下に正常動作環境を示します．
-| System  | Version |
-| ------------- | ------------- |
-| Ubuntu    | 20.04 (Focal Fossa) |
-| ROS       | Noetic Ninjemys |
+
+まず，以下の環境を整えてから，次のインストール段階に進んでください．
+
+| System | Version |
+| --- | --- |
+| Ubuntu | 20.04 (Focal Fossa) |
+| ROS    | Noetic Ninjemys |
+| OpenCV | 4.9.0 (動作確認済) |
+
+> [!NOTE]
+> UbuntuやROSのインストール方法に関しては，[SOBITS Manual](https://github.com/TeamSOBITS/sobits_manual#%E9%96%8B%E7%99%BA%E7%92%B0%E5%A2%83%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6)に参照してください．
+
+<p align="right">(<a href="#readme-top">上に戻る</a>)</p>
+
+
+<!-- インストール方法 -->
+## インストール方法
+
+1. ROSのsrcフォルダに移動します．
+  ```bash
+  $ roscd
+  # もしくは，"cd ~/catkin_ws/"へ移動．
+  $ cd src/
+  ```
+
+2. 本レポジトリをcloneします．
+  ```bash
+  $ git clone https://github.com/TeamSOBITS/ar_track_alvar
+  ```
+
+3. レポジトリの中へ移動します．
+  ```bash
+  $ cd ar_track_alvar/
+  ```
+
+4. パッケージをコンパイルします．
+  ```bash
+  $ roscd
+  # もしくは，"cd ~/catkin_ws/"へ移動．
+  $ catkin_make
+  ```
+
+<p align="right">(<a href="#readme-top">上に戻る</a>)</p>
+
 
 <!-- 実行・操作方法 -->
 ## 実行・操作方法
-<!-- デモの実行方法やスクリーンショットがあるとわかりやすくなるでしょう -->
-- Azure Kinect Launcher(Azure Kinectを使用して検出します)
-```
-$ roslaunch ar_track_alvar azure_kinect.launch
-```
-※その他のカメラを使用した場合は、トピック名とframe名を変更してください．
-- [Topに戻る](#ar_to_distance)
+
+1. ARタグの検出のために用いるカメラを起動します．
+
+2. 使用されるカメラに合わせて[ar_detect.launch](ar_track_alvar/launch/ar_detect.launch)を設定します．
+  ```xml
+  <!-- Real Marker size in cm -->
+  <arg name="marker_size"          default="5.4" />
+  <!-- Marker detection error in cm -->
+  <arg name="max_new_marker_error" default="0.08" />
+  <!-- Marker tracking error in cm -->
+  <arg name="max_track_error"      default="0.2" />
+
+  <!-- Camera image topic -->
+  <arg name="cam_image_topic" default="/rgb/image_raw" />
+  <!-- Camera info topic -->
+  <arg name="cam_info_topic"  default="/rgb/camera_info" />
+  <!-- Camera link -->
+  <arg name="output_frame"    default="/azure_camera_base" />
+  ```
+
+3. [ar_detect.launch](ar_track_alvar/launch/ar_detect.launch)というlaunchファイルを実行します．
+  ```bash
+  $ roslaunch ar_track_alvar ar_detect.launch
+  ```
+
+<p align="right">(<a href="#readme-top">上に戻る</a>)</p>
+
 
 <!-- マイルストーン -->
 ## マイルストーン
-- [ ] OSS
-    - [ ] ドキュメンテーションの充実
-    - [ ] コーディングスタイルの統一
 
-現時点のバッグや新規機能の依頼を確認するために[Issueページ](https://github.com/ros-perception/ar_track_alvar/issues) をご覧ください．
+- [x] OSS
+    - [x] ドキュメンテーションの充実
+    - [x] コーディングスタイルの統一
 
-<p align="right">(<a href="#readme-top">上に</a>)</p>
+現時点のバッグや新規機能の依頼を確認するために[Issueページ](issues-url) をご覧ください．
+
+<p align="right">(<a href="#readme-top">上に戻る</a>)</p>
+
 
 <!-- 変更履歴 -->
 ## 変更履歴
-  変更履歴はrst.fileを参照してください
+
+変更履歴は[CHANGELOG.rst](CHANGELOG.rst)を参照してください．
+
+<p align="right">(<a href="#readme-top">上に戻る</a>)</p>
+
+
 <!-- 参考文献 -->
 ## 参考文献
 
-* []()
-* []()
-* []()
+* [ar_track_alvar (ROS.org)](http://wiki.ros.org/ar_track_alvar)
 
 <p align="right">(<a href="#readme-top">上に戻る</a>)</p>
 
@@ -95,4 +166,4 @@ $ roslaunch ar_track_alvar azure_kinect.launch
 [issues-shield]: https://img.shields.io/github/issues/TeamSOBITS/ar_track_alvar.svg?style=for-the-badge
 [issues-url]: https://github.com/TeamSOBITS/ar_track_alvar/issues
 [license-shield]: https://img.shields.io/github/license/TeamSOBITS/ar_track_alvar.svg?style=for-the-badge
-[license-url]: https://github.com/TeamSOBITS/ar_track_alvar/blob/master/LICENSE.txt
+[license-url]: LICENSE
