@@ -126,7 +126,7 @@ First, please set up the following environment before proceeding to the next ins
     - [x] Improve documentation
     - [x] Standardize coding style
 
-Check the [Issue page](issues-url) for current bugs or feature requests.
+Check the [Issue page][issues-url] for current bugs or feature requests.
 
 <p align="right">(<a href="#readme-top">Back to top</a>)</p>
 
