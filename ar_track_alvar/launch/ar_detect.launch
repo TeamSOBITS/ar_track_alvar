@@ -1,0 +1,20 @@
+<launch>
+    <arg name="marker_size"          default="5.4" />  <!-- Real Marker size in cm -->
+    <arg name="max_new_marker_error" default="0.08" /> <!-- Marker detection error in cm -->
+    <arg name="max_track_error"      default="0.2" />  <!-- Marker tracking error in cm -->
+
+    <arg name="cam_image_topic" default="/rgb/image_raw" />   <!-- Camera image topic -->
+    <arg name="cam_info_topic"  default="/rgb/camera_info" /> <!-- Camera info topic -->
+
+    <arg name="output_frame"    default="/azure_camera_base" /> <!-- Camera link -->
+
+    <node name="ar_detect" pkg="ar_track_alvar" type="individualMarkersNoKinect" respawn="false" output="screen">
+        <param name="marker_size"           type="double" value="$(arg marker_size)" />
+        <param name="max_new_marker_error"  type="double" value="$(arg max_new_marker_error)" />
+        <param name="max_track_error"       type="double" value="$(arg max_track_error)" />
+        <param name="output_frame"          type="string" value="$(arg output_frame)" />
+
+        <remap from="camera_image"  to="$(arg cam_image_topic)" />
+        <remap from="camera_info"   to="$(arg cam_info_topic)" />
+    </node>
+</launch>
