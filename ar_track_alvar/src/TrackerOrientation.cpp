@@ -164,7 +164,7 @@ bool TrackerOrientation::UpdateRotationOnly(IplImage* gray, IplImage* image)
   }
 
   // Delete features that are not tracked
-  //        map<int,Feature>::iterator
+  //		map<int,Feature>::iterator
   it = _F_v.begin();
   while (it != _F_v.end())
   {

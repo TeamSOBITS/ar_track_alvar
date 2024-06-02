@@ -182,7 +182,7 @@ public:
  * The \e FilterRunningAverage calculates a simple running average
  * using the weight value \e alpha.
  * \code
- *        value = ((1.0-alpha) * value) + (alpha * (double)y);
+ *		value = ((1.0-alpha) * value) + (alpha * (double)y);
  * \endcode
  * If alpha is larger (near 1.0) the average reacts faster for
  * changes and if it is near 0.0 then it reacts slowly. The
@@ -225,8 +225,8 @@ public:
  * for both the \e average and \e slope using the weight values \e alpha and
  * \e gamma.
  * \code
- *        value = ((1.0-alpha) * (value + slope)) + (alpha * (double)y);
- *        slope = ((1.0-gamma) * (slope)) + (gamma * (value - value_prev));
+ *		value = ((1.0-alpha) * (value + slope)) + (alpha * (double)y);
+ *		slope = ((1.0-gamma) * (slope)) + (gamma * (value - value_prev));
  * \endcode
  * If the weight values (\e alpha , \e gamma) are larger (near 1.0)
  * the formulas react faster for changes and if they are near 0.0

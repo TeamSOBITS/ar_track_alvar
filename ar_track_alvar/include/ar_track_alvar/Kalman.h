@@ -62,9 +62,9 @@ public:
   /** \brief Copy constructor */
   KalmanSensorCore(const KalmanSensorCore& k);
   /**
-   * \brief         Constructor
-   * \param _n     The number of items in the Kalman  state vector
-   * \param _m    The number of measurements given by this sensor
+   * \brief 		Constructor
+   * \param _n 	The number of items in the Kalman  state vector
+   * \param _m	The number of measurements given by this sensor
    */
   KalmanSensorCore(int _n, int _m);
   /** \brief Destructor */
@@ -108,8 +108,8 @@ public:
   /** \brief Copy constructor */
   KalmanCore(const KalmanCore& s);
   /**
-   * \brief         Constructor
-   * \param _n    The number of items in the Kalman  state vector
+   * \brief 		Constructor
+   * \param _n	The number of items in the Kalman  state vector
    */
   KalmanCore(int _n);
   /** \brief Destructor */
@@ -120,7 +120,7 @@ public:
     return n;
   }
   /** \brief Predict the Kalman state vector for the given time step .
-   *     x_pred = F * x
+   * 	x_pred = F * x
    */
   virtual cv::Mat& predict();
   /** \brief Predict the Kalman state vector and update the state using the
@@ -145,9 +145,9 @@ public:
   /** \brief Copy constructor */
   KalmanSensor(const KalmanSensor& k);
   /**
-   * \brief         Constructor
-   * \param _n         The number of items in the Kalman  state vector
-   * \param _m    The number of measurements given by this sensor
+   * \brief 		Constructor
+   * \param _n 		The number of items in the Kalman  state vector
+   * \param _m	The number of measurements given by this sensor
    */
   KalmanSensor(int n, int _m);
   /** \brief Destructor */
@@ -220,9 +220,9 @@ public:
   /** \brief The predicted error covariance matrix */
   cv::Mat P_pred;
   /**
-   * \brief         Constructor
-   * \param n         The number of items in the Kalman  state vector
-   * \param _m    The number of measurements given by this sensor
+   * \brief 		Constructor
+   * \param n 		The number of items in the Kalman  state vector
+   * \param _m	The number of measurements given by this sensor
    */
   Kalman(int _n);
   /** \brief Destructor */

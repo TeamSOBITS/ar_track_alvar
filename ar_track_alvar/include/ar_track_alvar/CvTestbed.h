@@ -34,9 +34,9 @@ using namespace alvar;
  * }
  *
  * void main() {
- *       CvTestbed::Instance().SetVideoCallback(videocallback); // Set video
+ *	   CvTestbed::Instance().SetVideoCallback(videocallback); // Set video
  *callback CvTestbed::Instance().StartVideo("movie.avi"); // Video from avi
- *       // CvTestbed::Instance().StartVideo(0) // Video from camera 0
+ *	   // CvTestbed::Instance().StartVideo(0) // Video from camera 0
  * }
  * \endcode
  *
