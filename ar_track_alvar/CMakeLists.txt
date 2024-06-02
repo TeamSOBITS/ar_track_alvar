@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.0.2)
+cmake_minimum_required(VERSION 3.10.2)
 project(ar_track_alvar)
 
 find_package(catkin REQUIRED COMPONENTS
@@ -20,7 +20,7 @@ find_package(catkin REQUIRED COMPONENTS
         visualization_msgs)
 
 find_package(Eigen3 REQUIRED)
-find_package(OpenCV REQUIRED)
+find_package(OpenCV 4.9.0 REQUIRED PATHS "/opt/opencv/opencv_4.9.0/")
 find_package(TinyXML REQUIRED)
 
 # dynamic reconfigure support
